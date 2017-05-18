@@ -1,0 +1,30 @@
+@import url(https://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700|PT+Sans:400,400i,700,700i&amp;subset=cyrillic);
+
+body {
+  font-family: "PT Sans";
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "PT Sans Caption";
+}
+
+section {
+  margin: 30px;
+  padding: 30px;
+  color: #DDD;
+  text-align: center;
+  font-size: 2em;
+  font-weight: 700;
+}
+
+section.outMost {
+  background-color: #2A00AB;
+}
+
+section.regular {
+  background-color: #00817D;
+}
+
+section.inMost {
+  background-color: #F60;
+}
