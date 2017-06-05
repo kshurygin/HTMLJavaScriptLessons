@@ -1,14 +1,27 @@
-var sections = document.getElementsByTagName('section');
+var slideInterval = 3500;
 
-for (var i = 0; i < sections.length; ++i) {
-  sections[i].onclick = handleClick;
+function getFigures () {
+  return document.getElementById('carousel').getElementsByTagName('figure');
 }
 
-function handleClick(event) {
-  console.log('This element - ' + this.className + '| target element - ' + event.target.className);
+function moveForward() {
+  var pointer;
+  var figures = getFigures();
 
-  if (this.className == 'regular') {
-    event.stopPropagation();
-    console.log('event propogation stopped');
+  for (var i = 0; i < figures.length; i++) {
+    if (figures[i].className == 'visible') {
+        figures[i].className == '';
+        pointer = i;
+    }
   }
+  if (++pointer == figures.length) {
+      pointer = 0;
+  }
+  figures[pointer].className = 'visible';
+  setTimeout(moveForward, slideInterval);
 }
+function startPlayback() {
+  setTimeout(moveForward, slideInterval);
+}
+
+startPlayback();
